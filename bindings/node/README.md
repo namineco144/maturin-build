@@ -36,4 +36,4 @@ console.log(ds); // "2026-02-23"
 - `明治` (Meiji)
 
 ## Repository
-For more details and bindings for other languages (Python, Go), see the [GitHub Repository](https://github.com/namineco144/maturin-build).
+For more details and bindings for other languages (Python, Go), see the [GitHub Repository](https://github.com/namineco144/wareki-rs).

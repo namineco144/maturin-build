@@ -5,7 +5,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/namineco144/maturin-build.git",
+        "url": "https://github.com/namineco144/wareki-rs.git",
         "directory": "bindings/node"
     },
     "keywords": [

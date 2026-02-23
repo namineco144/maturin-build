@@ -5,5 +5,5 @@ src = "src"
 title = "wareki-rs Documentation"
 
 [output.html]
-git-repository-url = "https://github.com/namineco144/maturin-build"
-edit-url-template = "https://github.com/namineco144/maturin-build/edit/main/docs/src/{path}"
+git-repository-url = "https://github.com/namineco144/wareki-rs"
+edit-url-template = "https://github.com/namineco144/wareki-rs/edit/main/docs/src/{path}"

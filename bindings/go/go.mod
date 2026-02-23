@@ -1,3 +1,3 @@
-module github.com/namineco144/maturin-build/bindings/go
+module github.com/namineco144/wareki-rs/bindings/go
 
 go 1.22

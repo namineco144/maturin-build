@@ -10,18 +10,18 @@ Because this Go module uses CGO to bind to the Rust core library, you must have 
 
 1. Add the module to your Go project:
    ```bash
-   go get github.com/namineco144/maturin-build/bindings/go
+   go get github.com/namineco144/wareki-rs/bindings/go
    ```
 
-2. Build the Rust static library (you must have the `maturin-build` repository structure locally if building from source):
+2. Build the Rust static library (you must have the `wareki-rs` repository structure locally if building from source):
    ```bash
    cargo build --release -p wareki-c
    ```
 
 3. Configure CGO environment variables to point to the built static library when running or building your Go code:
    ```bash
-   export CGO_LDFLAGS="-L/path/to/maturin-build/target/release -lwareki_c"
-   export LD_LIBRARY_PATH="/path/to/maturin-build/target/release:$LD_LIBRARY_PATH"
+   export CGO_LDFLAGS="-L/path/to/wareki-rs/target/release -lwareki_c"
+   export LD_LIBRARY_PATH="/path/to/wareki-rs/target/release:$LD_LIBRARY_PATH"
    
    go build .
    # or
@@ -35,7 +35,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/namineco144/maturin-build/bindings/go"
+	"github.com/namineco144/wareki-rs/bindings/go"
 )
 
 func main() {

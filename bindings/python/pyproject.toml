@@ -28,8 +28,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/namineco144/maturin-build"
-Repository = "https://github.com/namineco144/maturin-build"
+Homepage = "https://github.com/namineco144/wareki-rs"
+Repository = "https://github.com/namineco144/wareki-rs"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]

@@ -38,4 +38,4 @@ dt2 = wareki.from_wareki("R", 8, 2, 23)
 ```
 
 ## Repository
-For more details and bindings for other languages (Node.js, Go), see the [GitHub Repository](https://github.com/namineco144/maturin-build).
+For more details and bindings for other languages (Node.js, Go), see the [GitHub Repository](https://github.com/namineco144/wareki-rs).

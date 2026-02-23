@@ -9,7 +9,7 @@
 
 ```toml
 [dependencies]
-wareki-core = { git = "https://github.com/namineco144/maturin-build.git" }
+wareki-core = { git = "https://github.com/namineco144/wareki-rs.git" }
 ```
 
 ## 使用例

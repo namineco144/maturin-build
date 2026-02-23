@@ -14,10 +14,10 @@ Go側から Rust コアの CFFI (C言語互換インターフェース) を呼�
 cargo build --release -p wareki-c
 
 # 2. CGO のリンカフラグ環境変数を設定する
-export CGO_LDFLAGS="-L/path/to/maturin-build/target/release -lwareki_c"
+export CGO_LDFLAGS="-L/path/to/wareki-rs/target/release -lwareki_c"
 
 # (※Linux環境などで動的リンクにフォールバックされる場合はこちらも要求されます)
-export LD_LIBRARY_PATH="/path/to/maturin-build/target/release:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/path/to/wareki-rs/target/release:$LD_LIBRARY_PATH"
 
 # 3. Go でビルド / 実行
 go build .
@@ -27,7 +27,7 @@ go run main.go
 
 依存先としてダウンロードする場合は以下のようになります。
 ```bash
-go get github.com/namineco144/maturin-build/bindings/go
+go get github.com/namineco144/wareki-rs/bindings/go
 ```
 
 ## 使い方
@@ -40,7 +40,7 @@ package main
 import (
 	"fmt"
 	"time"
-	// リモートの場合は "github.com/namineco144/maturin-build/bindings/go"
+	// リモートの場合は "github.com/namineco144/wareki-rs/bindings/go"
 	"wareki" 
 )
 
