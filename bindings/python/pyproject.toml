@@ -5,9 +5,31 @@ build-backend = "maturin"
 [project]
 name = "wareki-python"
 version = "0.1.0"
-description = "Japanese era conversion library"
+description = "A fast and safe Japanese era (Wareki) conversion library powered by Rust."
+readme = "README.md"
 authors = [{name = "Antigravity", email = "test@example.com"}]
+license = {text = "MIT"}
 requires-python = ">=3.8"
+keywords = ["wareki", "calendar", "rust", "japanese", "date"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+]
+
+[project.urls]
+Homepage = "https://github.com/namineco144/maturin-build"
+Repository = "https://github.com/namineco144/maturin-build"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
