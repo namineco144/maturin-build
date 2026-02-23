@@ -9,5 +9,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 chrono = "0.4"
-pyo3 = { version = "0.20", features = ["extension-module"] }
+pyo3 = { version = "0.21", features = ["extension-module"] }
 wareki-core = { path = "../../core" }

@@ -24,6 +24,8 @@ jobs:
           command: build
           args: --release --out dist
           working-directory: bindings/python
+        env:
+          PYO3_USE_ABI3_FORWARD_COMPATIBILITY: "1"
       - name: Upload wheels
         uses: actions/upload-artifact@v4
         with:
