@@ -1,0 +1,71 @@
+name: Node.js Release Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish to npm?'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  build:
+    name: Build Native Modules
+    runs-on: ${{ matrix.settings.host }}
+    strategy:
+      matrix:
+        settings:
+          - host: macos-latest
+            target: aarch64-apple-darwin
+          - host: windows-latest
+            target: x86_64-pc-windows-msvc
+          - host: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.settings.target }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Dependencies
+        working-directory: bindings/node
+        run: npm install
+      - name: Build
+        working-directory: bindings/node
+        run: npx napi build --platform --target ${{ matrix.settings.target }} --release
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: bindings-${{ matrix.settings.target }}
+          path: bindings/node/*.node
+
+  publish:
+    name: Publish to npm
+    needs: build
+    runs-on: ubuntu-latest
+    if: inputs.publish == true
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: bindings-*
+          merge-multiple: true
+          path: bindings/node
+      - name: Publish
+        working-directory: bindings/node
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

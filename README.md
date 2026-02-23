@@ -124,7 +124,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/user/wareki-go"
+	"github.com/namineco144/maturin-build/bindings/go"
 )
 
 func main() {

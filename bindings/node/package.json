@@ -1,7 +1,22 @@
 {
     "name": "wareki-node",
     "version": "0.1.0",
+    "description": "A fast and safe Japanese era (Wareki) conversion library powered by Rust.",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/namineco144/maturin-build.git",
+        "directory": "bindings/node"
+    },
+    "keywords": [
+        "wareki",
+        "calendar",
+        "rust",
+        "napi",
+        "japanese",
+        "date"
+    ],
+    "author": "Antigravity <test@example.com>",
     "main": "index.js",
     "scripts": {
         "build": "napi build --platform --release",
