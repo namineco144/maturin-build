@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: 'Publish to PyPI?'
+        description: 'Publish to TestPyPI?'
         required: false
         type: boolean
         default: false
@@ -31,7 +31,7 @@ jobs:
           path: bindings/python/dist
 
   publish:
-    name: Publish to PyPI
+    name: Publish to TestPyPI
     needs: build-wheels
     runs-on: ubuntu-latest
     if: inputs.publish == true
@@ -43,7 +43,8 @@ jobs:
           pattern: wheels-*
           merge-multiple: true
           path: dist
-      - name: Publish to PyPI
+      - name: Publish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
+          repository-url: https://test.pypi.org/legacy/
           packages-dir: dist/
