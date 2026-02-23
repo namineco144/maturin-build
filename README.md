@@ -1,5 +1,5 @@
 # wareki-rs
-
+*[日本語で読む (Read in Japanese)](README.ja.md)*
 A fast, safe, and precise library for converting between the Gregorian Calendar and the Japanese Era (Wareki) calendar.
 Written in Rust, with native bindings for Python, Node.js, and Go.
 
